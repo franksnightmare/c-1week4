@@ -1,7 +1,7 @@
-#ifndef STRINGS_H
-#define STRINGS_H
+#ifndef STRINGS_H_
+#define STRINGS_H_
 
-#include<iostream>
+#include <iostream>
 
 class Strings
 {

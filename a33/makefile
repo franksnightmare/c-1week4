@@ -1,2 +1,10 @@
-main: main.cc main.h strings/strings.h strings/strings1.cc strings/strings2.cc strings/addstring1.cc strings/addstring2.cc strings/size.cc strings/at1.cc strings/at2.cc
-	g++ -std=c++11 -Wall -o main main.cc strings/strings1.cc strings/strings2.cc strings/addstring1.cc strings/addstring2.cc strings/size.cc strings/at1.cc strings/at2.cc
+STRINGS = strings1.o strings2.o addstring1.o addstring2.o size.o at1.o at2.o
+
+#memory/memory.ih.gch: memory/memory.ih
+#	g++ -std=c++11 -x c++-header $<
+
+%.o: strings/%.cc strings/strings.h
+	g++ -std=c++11 -Wall -c -o $@ $<
+
+main: main.cc $(STRINGS) main.h strings/strings.h
+	g++ -std=c++11 -Wall -o main $<

@@ -1,10 +1,9 @@
 program : display.o read.o dataconstrdestr.o data.ih data.h
-	g++ -Wall -std=c++14 -o program display.o read.o dataconstrdestr.o \
-	-L/home/user/Documents/Programming/C++-Part-1/Week-4/Ex35 -ldatapimpl2 -s
+	g++ -Wall -std=c++14 -o program display.o read.o dataconstrdestr.o \ # first compilation and linking was without dataconstrdestr.o
+	-L/home/user/Documents/Programming/C++-Part-1/Week-4/Ex35 -ldatapimpl2 -s # different libraries were used for each situation
 	mv program ..
 
 dataconstrdestr.o : data.h data.ih dataconstrdestr.cc
-	# g++ -Wall -std=c++14 -c data.ih data.h dataconstrdestr.cc
 	g++ -Wall -std=c++14 -c dataconstrdestr.cc
 
 display.o : data.h data.ih display.cc

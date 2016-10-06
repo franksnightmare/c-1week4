@@ -1,0 +1,39 @@
+- The program breaks after creating the new library in step 2 of 
+
+exercise 35 is because the calling code expects a smaller object 
+
+size than in the first step where the object was smaller without the 
+
+additional private member. So memory corruption occurs.
+
+- After using the pointer to implementation approach the program 
+
+does not break because a pointer to the implementation of the 
+
+private member uses the memory address and thus knows from the 
+
+memory address how much memory the object takes up. Using no pointer 
+
+and not changing the main.o (where an object is constructed) after 
+
+adding a new private member, the main.o still thinks the object has 
+
+the same size. This gives a memory corruption.
+
+- You can design 2 classes, 1 for the functionality (i.e. public 
+
+interface) and 1 for the data (data/private members). The data class 
+
+can use the class with functionality and vice versa. Data members 
+
+can be added, because you only need to make an object from the 
+
+functional class. This one remains the same in size, so no memory 
+
+corruption. Changing the data class does not alter the size of the 
+
+object made from the functional class. The data class is only used 
+
+for the functional class and the data members are only accessed by 
+
+the functional class if necessary.

@@ -30,6 +30,12 @@
 	showstringspaces=false,
 }
 
+\lstdefinestyle{bigtabs}
+{
+	basicstyle = \normalsize\ttfamily,
+	tasize = 8;
+}
+
 \begin{document}
 
 \title{Programming report \\
@@ -44,7 +50,50 @@ Diego Ribas Gomes
 
 \maketitle
 
-\section*{Assignment 31, ...}
+\section*{Assignment 31, Pointer Questions}
+Here are the answers to the questions posed in assignment 31.
+
+\subsection*{1, Difference between pointer variables and arrays}
+The memory allocation of a pointer is dynamic and that of an array is static, can't be changed.
+The fundamental difference between them is that a pointer is a variable storing the memory addres of the variable to which it points, and the array is a chunk of variables allocated in one place of memory.
+
+\subsection*{2, Difference between pointer and reference variables}
+In the reference case we can't re-asign them after the assigment statement and in pointers we can make them point to any other place anytime.
+As an implication pointers can point to nothing but references need to refer to an object.
+We can say that a reference is an alias to another objec and a pointer stores the memory address of that object.
+
+\subsection*{3, How element [3][2] is reached}
+
+\subsubsection*{Part a, for variable int array[20][30]}
+In this case, the word array is an alias for the memory address of array[0][0] and when you write array[3][2] the compiler replace that labe with the corresponding memory address without the need of making further computations.
+
+\subsubsection*{Part b, for variable int *pointer[20]}
+When we tell the compiler to search for the location [3][2] the pointer addresses the memory location in which the first element is stored in memory, but for that it needs an intermediate step.
+We can say that the pointer points to a point that points to the first element of array.
+Finally the pointer arithmetic begins.
+In the figure below, [pointer] is the pointer label that points to the memory address of the ptr 0.
+The pointers ptr point to the first elements of the corresponding row.
+
+\begin{lstlisting}{style=bigtabs}
+			[pointer]
+			    |
+			    v    
+			[ptr 0]  -> [int 0] . . . [int 29]
+			    .
+			    .
+			    .
+			[prt 19] -> [int 0] . . . [int 29]
+\end{lstlisting}
+	    
+\subsection*{4, What does pointer arithmetic mean?}
+Is the operations that you can do with pointers. You can add, substract, increment or decrement them.
+For example if you have a type pointer and you want to locate the next type variable to which pointer points you can do ++pointer.
+
+\subsection*{5-1, Why accesing an element in an array using only a pointer is preferred over using an index expression.}
+They are preferred over index expression because they don't hide anything to the programer, they express better what the programmer intends and also because in the past the pointer expression was fast proccessed than the array index expression.
+
+\subsection*{5-2, Why is preferred to use pointer-loops over loops in which the control variable is a type variable?}
+When you are reading or writting an array inside a loop and you don't know when its last position is, is better to use a pointer comparison instead of an int comparison, the loop will stop when pointer points to a null termination.
 
 \section*{Assignment 32, Pointer and array arithmatic}
 Table \ref{tab:pointmath} has the arithmatic of the pointers and arrays as well as the descriptions of why it works out the way it does.

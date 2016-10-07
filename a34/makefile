@@ -1,4 +1,4 @@
-STRINGS = strings1.o strings2.o addstring1.o addstring2.o size.o at1.o at2.o
+STRINGS = strings1.o strings2.o addstring1.o addstring2.o size.o at1.o at2.o stringsswap.o
 
 #memory/memory.ih.gch: memory/memory.ih
 #	g++ -std=c++11 -x c++-header $<

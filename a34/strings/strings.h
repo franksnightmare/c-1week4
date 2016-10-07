@@ -19,7 +19,7 @@ class Strings
 		
 		void addString(std::string newString);
 		void addString(char *charArray);
-		void stringsSwap(Strings objectA, Strings objectB);
+		void stringsSwap(Strings &objectA, Strings &objectB);
 };
 
 #endif

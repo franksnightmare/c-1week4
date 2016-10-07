@@ -8,5 +8,5 @@ void Strings::stringsSwap(Strings &objectA, Strings &objectB)
     
     char **storedArray = objectA.d_str;
     objectA.d_str = objectB.d_str;
-    objectB.d_srt = storedSize;
+    objectB.d_str = storedArray;
 }

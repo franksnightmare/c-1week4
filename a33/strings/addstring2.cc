@@ -2,15 +2,11 @@
 
 void Strings::addString(char *charArray)
 {
-	char **n_str = new char *[d_size + 1];
+	size_t len = strlen(charArray) + 1;
+	addCapacity(len);
 	
-	for (size_t index = 0; index != d_size; ++index)
-	{
-		n_str[index] = d_str[index];
-	}
-	n_str[d_size] = &charArray[0];
+	for (size_t index = 0; index != len; ++index)
+		d_str[d_size + index] = charArray[index];
 	
-	delete d_str;
-	d_str = n_str;
-	++d_size;
+	d_size += len;
 }

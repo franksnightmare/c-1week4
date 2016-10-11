@@ -1,0 +1,28 @@
+a31:
+unfixed
+
+a32:
+unfixed
+
+a33:
+fixed but still unsure about dem types
+can't find what PBV stands for
+added str.cc
+added setstr.cc
+readded setsize.cc?
+added addcapacity.cc
+
+a34:
+fixed
+moved stringsswap.cc to main folder
+removed stringsswap as a member function of the strings class
+
+a35:
+unfixed
+
+a36:
+unfixed
+
+a37:
+fixed?
+line was too long?

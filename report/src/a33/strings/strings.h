@@ -1,24 +1,28 @@
-#ifndef STRINGS_H_
-#define STRINGS_H_
+#ifndef STRINGS_H
+#define STRINGS_H
 
-#include <iostream>
+#include<iostream>
 
 class Strings
 {
-	private:
-		char **d_str;
-		size_t d_size;
+	char *d_str;
+	size_t d_size = 0;
+	
+	void addCapacity(size_t increment);
 	
 	public:
 		Strings(int argc, char **argv);
 		Strings(char **environ);
 		
 		size_t size();
-		std::string at(size_t index);
-		std::string const at(size_t index) const;
+		char *str();
+		char *at(size_t index);
+		char const *at(size_t index) const;
 		
 		void addString(std::string newString);
 		void addString(char *charArray);
+		void setSize(size_t size);
+		void setStr(char *str);
 };
 
 #endif

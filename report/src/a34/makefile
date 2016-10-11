@@ -1,4 +1,4 @@
-STRINGS = strings1.o strings2.o addstring1.o addstring2.o size.o at1.o at2.o stringsswap.o
+STRINGS = strings1.o strings2.o addstring1.o addstring2.o size.o str.o setsize.o setstr.o at1.o at2.o addcapacity.o
 
 #memory/memory.ih.gch: memory/memory.ih
 #	g++ -std=c++11 -x c++-header $<
@@ -6,5 +6,8 @@ STRINGS = strings1.o strings2.o addstring1.o addstring2.o size.o at1.o at2.o str
 %.o: strings/%.cc strings/strings.h
 	g++ -std=c++11 -Wall -c -o $@ $<
 
-main: main.cc $(STRINGS) main.h
-	g++ -std=c++11 -Wall -o main main.cc $(STRINGS) main.h
+%.o: %.cc main.h
+	g++ -std=c++11 -Wall -c -o $@ $<
+
+main: main.cc $(STRINGS) stringsswap.o main.h
+	g++ -std=c++11 -Wall -o main main.cc $(STRINGS) stringsswap.o main.h

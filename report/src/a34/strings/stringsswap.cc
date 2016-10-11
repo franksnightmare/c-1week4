@@ -1,6 +1,6 @@
 #include "strings.ih"
 
-void Strings::stringsSwap(Strings &objectA, Strings &objectB)
+static void Strings::stringsSwap(Strings &objectA, Strings &objectB)
 {
     size_t storedSize = objectA.d_size;
     objectA.d_size = objectB.d_size;

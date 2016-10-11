@@ -17,5 +17,5 @@ int main(int argc, char **argv)
 		cout << strings1.at(index) << '\n';
 	}
 	
-	strings1.stringsSwap(strings1, strings2);
+	stringsSwap(strings1, strings2);
 }

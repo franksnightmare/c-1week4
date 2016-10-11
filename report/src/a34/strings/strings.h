@@ -5,24 +5,21 @@
 
 class Strings
 {
-	char *d_str;
-	size_t d_size = 0;
-	
-	void addCapacity(size_t increment);
+	private:
+		char **d_str;
+		size_t d_size;
 	
 	public:
 		Strings(int argc, char **argv);
 		Strings(char **environ);
 		
 		size_t size();
-		char *str();
-		char *at(size_t index);
-		char const *at(size_t index) const;
+		std::string at(size_t index);
+		std::string const at(size_t index) const;
 		
 		void addString(std::string newString);
 		void addString(char *charArray);
-		void setSize(size_t size);
-		void setStr(char *str);
+		void stringsSwap(Strings &objectA, Strings &objectB);
 };
 
 #endif

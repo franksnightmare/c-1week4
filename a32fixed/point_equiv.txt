@@ -1,0 +1,60 @@
+
+---------------------------------------------------------------------------------------------------
+        definition:         rewrite:       	 pointers:    		semantics:
+---------------------------------------------------------------------------------------------------
+x.      int x[8];           x[4]           	 *(x + 4)    		x + 4 points to the 
+                                           	             		location of the 4th
+                                                        		int beyond x. That
+                                                        		element is reached
+                                                        		using the dereference
+                                                        		operator (*)
+
+a.      int x[8];           x[3] = x[2];   	 *(x + 3) = *(x + 2)	x + 3 and x + 2 points
+									to the location of the
+									3th and 2nd int beyond
+									x. Then we assign the
+									value of the 2nd one to
+									the 3th one using the
+									reference operator(*)
+
+b.      char *argv[8];      cout << argv[2];	cout << *(argv + 2);	We have a pointer to a
+									pointer of a variable char
+									(array of "strings"). 
+									(argv + 2) points to the 
+									location of the 2nd set of chars
+									beyond argv. And the print it.
+									
+c.      int x[8];           &x[10] - &x[3];    	10 - 3			In this case we	are substracting
+									two memory addresses of the
+									vector x in positiosn 10 and 										So the difference in memory
+									positions will be 10 - 3 = 7.    			
+d.      char *argv[8];      argv[0]++;		(*argv)++		(argv + 0) points to the location
+									of the set of characters argv. Then,
+									in that "string" we increment
+									a position and delete the first 
+									character of that "string".
+
+e.      char *argv[8];      argv++[0];		*(argv++)		It doesn't compile because of a syntax
+									error, but if it did: It increments by
+									one the point direction of argv. 
+									(argv + 1) points to the location
+									of the first set of chars beyond argv.	
+
+f.      char *argv[8];      ++argv[0];		++*argv			(argv + 0) points to the location
+									of the set of characters argv. Then,
+									in that "string" we increment
+									a position and delete the first 
+									character of that "string".
+									The difference between d. and e. is
+									that the increment in this is after
+									the statement.
+
+g.      char **argv;        ++argv[0][2];	*(*(++argv)  + 2)	It doesn't compile because of a syntax
+									error, but if it did: It increments by
+									one the point direction of the second
+									character in the "string" argv. The 
+									result points to the second character
+									in the first "string" argv.
+-----------------------------------------------------------------------
+        
+

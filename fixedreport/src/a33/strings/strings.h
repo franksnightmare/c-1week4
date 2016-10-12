@@ -11,7 +11,7 @@ class Strings
 	void addCapacity(size_t increment);
 	
 	public:
-		Strings(int argc, char **argv);
+		Strings(size_t argc, char **argv);
 		Strings(char **environ);
 		
 		size_t size();

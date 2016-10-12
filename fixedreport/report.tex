@@ -124,16 +124,12 @@ The \texttt{size} function shows how many strings the object contains.
 The \texttt{at} member functions should return modifiable or non-modifiable strings. In the case that a string literal is stored then when using at a non-modifiable string should be returned. When saving normal strings or arrays a modifiable string should be returned.
 
 \subsection*{Code Listings}
-\lstinputlisting[caption = \tt main.h]{src/a33/main.h}
-\lstinputlisting[caption = \tt main.cc]{src/a33/main.cc}
-
-\lstinputlisting[caption = \tt strings.ih]{src/a33/strings/strings.ih}
 \lstinputlisting[caption = \tt strings.h]{src/a33/strings/strings.h}
+\lstinputlisting[caption = \tt addcapacity.cc]{src/a33/strings/addcapacity.cc}
 \lstinputlisting[caption = \tt addstring1.cc]{src/a33/strings/addstring1.cc}
 \lstinputlisting[caption = \tt addstring2.cc]{src/a33/strings/addstring2.cc}
 \lstinputlisting[caption = \tt at1.cc]{src/a33/strings/at1.cc}
 \lstinputlisting[caption = \tt at2.cc]{src/a33/strings/at2.cc}
-\lstinputlisting[caption = \tt size.cc]{src/a33/strings/size.cc}
 \lstinputlisting[caption = \tt strings1.cc]{src/a33/strings/strings1.cc}
 \lstinputlisting[caption = \tt strings2.cc]{src/a33/strings/strings2.cc}
 
@@ -142,7 +138,7 @@ For this exercise a member function was to be added to the \texttt{Strings} clas
 
 \subsection*{Code Listings}
 \lstinputlisting[caption = \tt strings.h]{src/a34/strings/strings.h}
-\lstinputlisting[caption = \tt stringsswap.cc]{src/a34/strings/stringsswap.cc}
+\lstinputlisting[caption = \tt stringsswap.cc]{src/a34/stringsswap.cc}
 
 \section*{Assignment 35, Pimpl}
 The goal of this exercise was to use and learn about the Pimpl method.
@@ -154,15 +150,18 @@ The command used to make the library and link main.o was \texttt{ar rsv libdata.
 \subsection*{The makefile}
 \begin{lstlisting}
 program : display.o read.o data.ih data.h
-	g++ -Wall -std=c++14 -o program display.o read.o \
-    -L/home/user/Documents/Programming/C++-Part-1/Week-4/Ex35 -ldata -s
-	mv program ..
+		g++ -Wall -std=c++14 -o program display.o read.o \
+			-L/home/user/Documents/Programming/C++-Part-1/Week-4/Ex35
+			-ldata -s
+		# Absolute path was used instead of relative path,
+		# because the relative path was not working correctly
+		mv program ..
 
 display.o : data.h data.ih display.cc
-	g++ -Wall -std=c++14 -c display.cc
+		g++ -Wall -std=c++14 -c display.cc
 
 read.o : data.h data.ih read.cc
-	g++ -Wall -std=c++14 -c read.cc
+		g++ -Wall -std=c++14 -c read.cc
 \end{lstlisting}
 
 \subsection*{First results}
@@ -180,18 +179,20 @@ After uncommenting the definition of \texttt{d\_text} in data.h and its use in r
 Note that for each situation a new library is made.
 \begin{lstlisting}
 program : display.o read.o dataconstrdestr.o data.ih data.h
-	g++ -Wall -std=c++14 -o program display.o read.o dataconstrdestr.o \
-	-L/home/user/Documents/Programming/C++-Part-1/Week-4/Ex35 -ldatapimpl2 -s
-	mv program ..
+		g++ -Wall -std=c++14 -o program display.o read.o
+			dataconstrdestr.o \
+			-L/home/user/Documents/Programming/C++-Part-1/Week-4/Ex35
+			-ldatapimpl2 -s
+		mv program ..
 
 dataconstrdestr.o : data.h data.ih dataconstrdestr.cc
-	g++ -Wall -std=c++14 -c dataconstrdestr.cc
+		g++ -Wall -std=c++14 -c dataconstrdestr.cc
 
 display.o : data.h data.ih display.cc
-	g++ -Wall -std=c++14 -c display.cc
+		g++ -Wall -std=c++14 -c display.cc
 
 read.o : data.h data.ih read.cc
-	g++ -Wall -std=c++14 -c read.cc
+		g++ -Wall -std=c++14 -c read.cc
 \end{lstlisting}
 
 \subsection*{Second results}
@@ -212,30 +213,29 @@ With \texttt{d\_text} in the running code.
 \end{itemize}
 
 \subsection*{Code listings}
-\lstinputlisting[caption = \tt data.ih]{src/a35/data.ih}
-\lstinputlisting[caption = \tt data.h]{src/a35/data.h}
-\lstinputlisting[caption = \tt main.cc]{src/a35/main.cc}
-\lstinputlisting[caption = \tt display.cc]{src/a35/display.cc}
-\lstinputlisting[caption = \tt read.cc]{src/a35/read.cc}
+\lstinputlisting[caption = \tt data.ih]{src/a35fixed/data.ih}
+\lstinputlisting[caption = \tt data.h]{src/a35fixed/data.h}
+\lstinputlisting[caption = constructor and destructor]{src/a35fixed/dataconstrdestr.cc}
 
 \section*{Assigment 36, Pimpl questions}
 Here are the answers to the questions of assignment 36 about assignment 35.
 
 \subsection*{When the program breaks down}
 The program breaks after creating the new library in step 2 of exercise 35 is because the calling code expects a smaller object  size than in the first step where the object was smaller without the additional private member. So memory corruption occurs.
+Memory corruption occurs because of the compiler expecting a smaller object than is preset.
+The compiler does not allocate the extra memory necessary for the bigger object, hence the code breaks.
+You cannot use more memory than is available.
 
 \subsection*{Why the program doesnt break down with the pointer implementation.}
 After using the pointer to implementation approach the program does not break because a pointer to the implementation of the private member uses the memory address and thus knows from the memory address how much memory the object takes up. Using no pointer and not changing the \texttt{main.o} (where an object is constructed) after adding a new private member, the main.o still thinks the object has the same size. This gives a memory corruption.
 
-\subsection*{World-famous library}
-You can design 2 classes, 1 for the functionality (i.e. public interface) and 1 for the data (data/private members). The data class can use the class with functionality and vice versa. Data members can be added, because you only need to make an object from the functional class. This one remains the same in size, so no memory corruption. Changing the data class does not alter the size of the object made from the functional class. The data class is only used for the functional class and the data members are only accessed by the functional class if necessary.
+\subsection*{Use of the library}
+You can design 2 classes, 1 for the functionality (i.e. public interface) and 1 for the data (data/private members). The functionality class can access the data members of the data class by calling making an object of it. The functionality class can then access its members, accessors and manipulators. Data members can be added to the data class, because you only need to make an object from the functionality class. This one remains the same in size, so no memory corruption. Changing the data class does not alter the size of the object made from the functionality class. The data class is only used for the functionality class and the data members are only accessed by the functionality class if necessary.
 
 \section*{Assignment 37, inverse identity}
 We were tasked with making a function that constructs the inverse identity of an array by using an array of pointers that point to the rows of a two-dimensional matrix. The function adheres to the problem description: two for loops, 1 parameter, 3 initialized pointer variables and one assignment statement.
 
 \subsection*{Code listings}
-\lstinputlisting[caption = \tt main.h]{src/a37/main.h}
-\lstinputlisting[caption = \tt main.cc]{src/a37/main.cc}
 \lstinputlisting[caption = \tt inv\_identity.cc]{src/a37/inv_identity.cc}
 
 \end{document}

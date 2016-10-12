@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.5)  7 OCT 2016 15:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.5)  12 OCT 2016 13:22
 entering extended mode
 **report.tex
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\report.tex
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\report.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -139,7 +139,7 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 )
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\report.aux)
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\report.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
 LaTeX Font Info:    ... okay on input line 39.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
@@ -212,68 +212,64 @@ Underfull \hbox (badness 1033) in paragraph at lines 115--115
 
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
 (Font)              Font shape `OT1/pcr/b/n' tried instead on input line 123.
-[2] [3] (C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/main.h
-) (C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/main.cc)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/strings/string
-s.ih)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/strings/string
-s.h [4])
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/strings/addstr
-ing1.cc)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/strings/addstr
-ing2.cc) [5]
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/strings/at1.cc
-)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/strings/at2.cc
-)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/strings/size.c
-c)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/strings/string
-s1.cc)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a33/strings/string
-s2.cc [6])
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a34/strings/string
-s.h)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a34/strings/string
-sswap.cc [7])
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 171.
+[2] [3]
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a33/strings/s
+trings.h)
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a33/strings/a
+ddcapacity.cc)
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a33/strings/a
+ddstring1.cc [4])
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a33/strings/a
+ddstring2.cc)
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a33/strings/a
+t1.cc [5])
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a33/strings/a
+t2.cc)
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a33/strings/s
+trings1.cc)
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a33/strings/s
+trings2.cc) [6]
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a34/strings/s
+trings.h)
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a34/stringssw
+ap.cc [7])
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 170.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 171.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 170.
 
-[8] (C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a35/data.ih
-[9]) (C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a35/data.h)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a35/main.cc
-[10])
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a35/display.cc)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a35/read.cc)
-[11] (C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a37/main.h)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a37/main.cc)
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\src/a37/inv_identity.c
-c [12]) [13]
-(C:\Users\Christiaan\Documents\latex\c++\week4git\report\report.aux) ) 
+[8]
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a35fixed/data
+.ih [9])
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a35fixed/data
+.h)
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a35fixed/data
+constrdestr.cc) [10]
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\src/a37/inv_ident
+ity.cc [11]) [12]
+(C:\Users\Christiaan\Documents\latex\c++\week4git\fixedreport\report.aux) ) 
 Here is how much of TeX's memory you used:
- 3169 strings out of 493921
- 46806 string characters out of 3144862
- 196605 words of memory out of 3000000
- 6373 multiletter control sequences out of 15000+200000
+ 3179 strings out of 493921
+ 46344 string characters out of 3144862
+ 197605 words of memory out of 3000000
+ 6396 multiletter control sequences out of 15000+200000
  18462 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,10n,58p,576b,1572s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/tim
-es/utmr8a.pfb>
-Output written on report.pdf (13 pages, 94591 bytes).
+ 33i,10n,58p,724b,1572s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/
+Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
+w/times/utmr8a.pfb>
+Output written on report.pdf (12 pages, 93313 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
+ 66 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,18 @@
+#include "data.h"
+
+#include <iostream>
+
+using namespace std;
+
+class Data::DataImp
+{
+    private:
+        int d_value = 0;
+        std::string d_text;
+        
+    public:
+        bool read();
+        void display() const;
+
+
+};

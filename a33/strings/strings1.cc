@@ -1,7 +1,7 @@
 #include "strings.ih"
 
-Strings::Strings(int argc, char **argv)
+Strings::Strings(size_t argc, char **argv)
 {
-	for (size_t index = 0; index != d_size; ++index)
+	for (size_t index = 0; index != argc; ++index)
 		addString(argv[index]);
 }

@@ -6,6 +6,12 @@ size than in the first step where the object was smaller without the
 
 additional private member. So memory corruption occurs.
 
+Memory corruption occurs because of the compiler expecting a smaller object than is preset.
+
+The compiler does not allocate the extra memory necessary for the bigger object, hence the code breaks.
+
+You cannot use more memory than is available.
+
 - After using the pointer to implementation approach the program 
 
 does not break because a pointer to the implementation of the 
@@ -22,18 +28,21 @@ the same size. This gives a memory corruption.
 
 - You can design 2 classes, 1 for the functionality (i.e. public 
 
-interface) and 1 for the data (data/private members). The data class 
+interface) and 1 for the data (data/private members). 
+--------------------------------------------------------------
+The functionality class can access the data members of the data class by calling making an object of it.
 
-can use the class with functionality and vice versa. Data members 
+The functionality class can then access its members, accessors and manipulators.
+--------------------------------------------------------------
 
-can be added, because you only need to make an object from the 
+Data members can be added to the data class, because you only need to make an object from the 
 
-functional class. This one remains the same in size, so no memory 
+functionality class. This one remains the same in size, so no memory 
 
 corruption. Changing the data class does not alter the size of the 
 
-object made from the functional class. The data class is only used 
+object made from the functionality class. The data class is only used 
 
-for the functional class and the data members are only accessed by 
+for the functionality class and the data members are only accessed by 
 
-the functional class if necessary.
+the functionality class if necessary.

@@ -24,7 +24,10 @@ changed the tabs in the makefile to 4 tabs, in report the tabs were too short. b
 included the implementations of constructor/destructor which was missing
 
 a36:
-unfixed
+fixed
+elaborated more on the parts which were noted in the report
+I am not sure if I explained correctly how the functionality class can access the data class (between dashed lines in a36)
+please check that if you want
 
 a37:
 fixed?

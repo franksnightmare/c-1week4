@@ -18,7 +18,10 @@ moved stringsswap.cc to main folder
 removed stringsswap as a member function of the strings class
 
 a35:
-unfixed
+fixed
+moved private above public in the class interfaces
+changed the tabs in the makefile to 4 tabs, in report the tabs were too short. be careful with that in final report.
+included the implementations of constructor/destructor which was missing
 
 a36:
 unfixed
